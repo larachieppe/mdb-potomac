@@ -1,9 +1,16 @@
 import { StyleSheet, Text, View, Redirect, SafeAreaView } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import NavBar from "./components/navbar/NavBar";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 export default function App() {
+  const RootStack = createStackNavigator();
   return (
-    <SafeAreaView>
-      <Text>Hello</Text>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <NavBar />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
